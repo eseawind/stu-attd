@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="admin" location="0,0" size="0,0">
+    <action name="tbStudent" location="0,0" size="0,0" />
+    <action name="download" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="tongjiAction" location="0,0" size="0,0">
+      <result name="table">
+        <resourceEdge source="table" routing="0" target="table.jsp" />
+      </result>
+      <result name="picture">
+        <resourceEdge source="picture" routing="0" target="picture.jsp" />
+      </result>
+      <result name="detail">
+        <resourceEdge source="detail" routing="0" target="detail.jsp" />
+      </result>
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="table.jsp" path="/admin/jsp/tongji/table.jsp" location="0,0" size="0,0" />
+  <webResource name="picture.jsp" path="/admin/jsp/tongji/picture.jsp" location="0,0" size="0,0" />
+  <webResource name="detail.jsp" path="/admin/jsp/tongji/detail.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

@@ -1,0 +1,57 @@
+html, body, ul, ol, p, h1, h2, h3, h4, h5, h6, form, fieldset,table,td, img {margin:0; padding:0; border:0;}
+p,div,table,td,select,input,textarea {font-size:12px;/*color: #006699;*/color: #3C3C3C;}
+html,body{height:100%;font-family:"", arial;background:url(/AXT/admin/image/login/install_backimg.jpg) top right no-repeat;min-height:600px;min-width:1000px;overflow:hidden;}
+a:link{color:#000;text-decoration: none;}
+a:visited{color:#000;text-decoration: none;}
+a:hover{color:#2E6CD2;text-decoration: underline}
+a:active{color: #2E6CD2; text-decoration: underline}
+form{height:100%;}
+
+/*ie6 only*/
+
+.leftform{float:left;width:42%;height:100%; margin-top:3%;background:url() 45% 38% no-repeat;}
+.rightform{float:left;width:58%;_width:57%;background:url(/AXT/admin/image/login/install_lines.jpg) left 46% no-repeat;height:100%;}
+.alterform li{line-height:20px;list-style:none;}
+.dataForm li{line-height:20px;list-style:none;padding-left:20px;}
+
+.installtitle,.dataTitle,.dataTitle2{color:#2E6CD2;font-size:14px;font-weight:bold;}
+.dataTitle{background:url(/AXT/admin/image/login/step_1.gif) no-repeat;padding-left:20px;}
+.dataTitle2{background:url(/AXT/admin/image/login/xieyi.gif) no-repeat;padding-left:20px;padding-bottom:10px;}
+.conLeftForm{padding-top:75%;width:200px;padding-left:24.5%;}
+
+.conRightForm{padding-top:35%;padding-left:58px;_padding-top:21%;}
+.dataForm span{display:-moz-inline-box !important;display:inline-block;width:78px;}
+.inputstyle,.inputstyle_2{padding-bottom:5px;}
+.inputstyle_2{vertical-align:top;}
+.step_1{padding-top:10px;}
+.zhushi{margin-left:112px;width:210px;margin-bottom:12px;color:#797979;}
+
+.bottomclass{position:absolute;width:100%;left:0;bottom:0;height:35px;background:url(/AXT/admin/image/login/bottomBg.gif) repeat-x;min-width:1000px;line-height:35px;}
+.bottomclass p{color:#fff;padding-left:20px;line-height:35px;}
+.bottomclass p a{color:#fff;}
+.bottomclass p a font{color:Yellow;}
+
+.inp_L1,.inp_L2{background:url(/AXT/admin/image/login/bg_x.gif) no-repeat}
+.inp_L1{ width:67px; height:23px; background-position:-4px -4px; border:0; color:#464646; line-height:23px}
+.inp_L2{ width:67px; height:23px; background-position:-4px -30px; border:0; color:#464646; line-height:23px}
+.MessageSuccess {
+	padding:2px;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 100%;
+	color: #334433;
+	border: solid;
+	border-width: 1px;
+	border-color: #00be00;
+	background-color: #E9FFEB;
+}
+.MessageError {
+	margin:0px;
+	padding: 2px;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 100%;
+	color: #443333;
+	border: solid;
+	border-width: 1px;
+	border-color: #f60;
+	background-color: #FFF2E9;
+}

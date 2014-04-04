@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 注解支持 -->
+	<context:annotation-config />
+	<!-- 扫描位置 -->
+	<context:component-scan base-package="com.axt"></context:component-scan>
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+
+		<property name="url">
+			<value>jdbc:mysql://xxx.xxx.xxx.xxx:3306/XXX?useUnicode=true&amp;characterEncoding=utf8</value>
+		</property>
+		<property name="username">
+			<value>XXXXX</value>
+		</property>
+		<property name="password">
+			<value>xxxxxxxx</value>
+		</property>
+	</bean>
+	
+	<!-- 尚未配置第三方数据源 -->
+
+	<!-- 配置sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<!-- model class -->
+   		<property name="annotatedClasses">
+   			<list>
+   				<!-- 给出生成的注解PO 
+   				<value>com.kwgl.po.TbColumn</value>
+   				-->
+   				<value>com.axt.po.TbRule</value>
+   				<value>com.axt.po.TbSetting</value>
+   				<value>com.axt.po.TbClass</value>
+   				<value>com.axt.po.TbStudent</value>
+   				<value>com.axt.po.TbUser</value>
+   				<value>com.axt.po.TbRecord</value>
+   				<value>com.axt.po.TbTemp</value>
+				<value>com.axt.po.TbLog</value>
+   			</list>
+   		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- 配置Hibernate的方言 -->
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 输入由Hibernate生成的SQL语句，如果在hibernate.cfg.xml中也指定的话，会生成两条语句，在产品中最好关闭，即设为false -->
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 配置事务管理 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- advice -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop -->
+	
+	<aop:config>
+		<aop:pointcut id="userService" expression="execution(public * com.axt.dao.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="userService"/>
+	</aop:config>
+
+	
+</beans>

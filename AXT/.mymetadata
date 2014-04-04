@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="AXT"
+  id="myeclipse.1342185878815"
+  context-root="/AXT"
+  j2ee-spec="5.0"
+  archive="AXT.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
