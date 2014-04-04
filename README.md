@@ -12,4 +12,5 @@ stu-attd<br/>
 声明：因版权原因只上传部分代码。<br/>
 
 因上传代码不能正常更新，故代码暂时存放在百度网盘，等待问题解决后及时上传到Github。<br/>
-网盘地址：<a href="http://pan.baidu.com/s/1qW13h3e">http://pan.baidu.com/s/1qW13h3e</a>
+
+2014年4月4日16:34:11更新：代码已上传到Github，百度网盘的源码已删除。
